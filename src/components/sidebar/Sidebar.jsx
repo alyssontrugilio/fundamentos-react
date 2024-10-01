@@ -11,7 +11,7 @@ export function Sidebar() {
         className={styles.cover}
       />
       <div className={styles.profile}>
-        <Avatar src="https://github.com/AlyssonTrugilio.png" />
+        <Avatar hasBorder src="https://github.com/AlyssonTrugilio.png" />
         <strong>Alysson Silva</strong>
         <span>Web Developer</span>
       </div>

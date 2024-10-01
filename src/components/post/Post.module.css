@@ -50,7 +50,7 @@
   line-height: 1.6;
 }
 
-.authorInfo strong {
+.authorInfo span {
   display: block;
   font-size: 0.875rem;
   color: var(--gray-400);
@@ -106,7 +106,6 @@
   background: var(--green-300);
 }
 
-
-.commentList{
+.commentList {
   margin-top: 2rem;
 }
