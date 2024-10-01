@@ -1,5 +1,5 @@
-import { Avatar } from './Avatar';
-import {Comment} from './Comment'
+import { Avatar } from "../avatar/Avatar";
+import { Comment } from "../comment/Comment";
 
 import styles from "./Post.module.css";
 
@@ -8,13 +8,13 @@ export function Post() {
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-           <Avatar src='https://github.com/AlyssonTrugilio.png'/>
+          <Avatar src="https://github.com/AlyssonTrugilio.png" />
           <div className={styles.authorInfo}>
             <strong>Alysson Trugilio</strong>
             <span>Web Developer</span>
           </div>
-        </div>   
-         <time title="11 de maio  às 08:13h" datetime="2024-09-29 08:13:30">
+        </div>
+        <time title="11 de maio  às 08:13h" datetime="2024-09-29 08:13:30">
           Publicado há 1h
         </time>
       </header>
@@ -43,10 +43,9 @@ export function Post() {
       </form>
 
       <div className={styles.commentList}>
-        <Comment/>
-        <Comment/>
-        <Comment/>
-
+        <Comment />
+        <Comment />
+        <Comment />
       </div>
     </article>
   );
