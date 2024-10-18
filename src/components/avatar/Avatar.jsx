@@ -6,7 +6,7 @@ export function Avatar({ hasBorder = false, src }) {
       <img
         className={hasBorder ? styles.avatarWithBorder : styles.avatar}
         src={src}
-        alt="fotode perfil"
+        alt="foto de perfil"
       />
     </div>
   );
