@@ -6,13 +6,27 @@ import { Avatar } from "../avatar/Avatar";
 import { Comment } from "../comment/Comment";
 
 import styles from "./Post.module.css";
+import { useState } from 'react';
+
+
 
 export function Post({author, publishedAt, content}) {
+
+  const [comments, setComments] = useState([1,2]);
   const publishedDateFormatted = format(publishedAt,"d 'de' LLLL  'às' HH:mm'h'",{locale:ptBR})
   const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
     locale:ptBR,
     addSuffix: true,
   })
+
+  function handleCreateNewComment(){
+    event.preventDefault();
+      
+      setComments([...comments, comments.length+1]);
+
+      console.log(comments)
+  } 
+
   return (
     <article className={styles.post}>
       <header>
@@ -44,18 +58,22 @@ export function Post({author, publishedAt, content}) {
         </p>
       </div>
 
-      <form className={styles.commentForm}>
+      <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
+
         <textarea placeholder="Deixe um comentário" />
+
         <footer>
           <button type="submit">Publicar</button>
         </footer>
       </form>
  
       <div className={styles.commentList}>
-        <Comment />
-        <Comment />
-        <Comment />
+        {
+          comments.map(comment => {
+            return <Comment/>
+          })
+        }
       </div>
     </article>
   );
